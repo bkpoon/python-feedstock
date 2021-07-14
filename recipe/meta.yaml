@@ -16,9 +16,9 @@ source:
     patches:
       # https://bugs.python.org/issue40263
       - patches/0000-Fix-off-by-one-error-in-_winapi_WaitForMultipleObjec.patch
-{% if 'conda-forge' not in channel_targets %}
-      - patches/0001-Add-Anaconda-Distribution-version-logic.patch
-{% endif %}
+# {% if 'conda-forge' not in channel_targets %}
+#       - patches/0001-Add-Anaconda-Distribution-version-logic.patch
+# {% endif %}
       - patches/0002-Darwin-Add-arch-x86_64-to-UnicCCompiler-ld_args.patch
       - patches/0003-Win32-Change-FD_SETSIZE-from-512-to-2048.patch
       - patches/0004-Win32-distutils-Add-support-to-cygwinccompiler-for-V.patch
@@ -37,9 +37,9 @@ source:
       - patches/0017-Unvendor-sqlite3.patch
       # https://bugs.python.org/issue35644
       - patches/0018-venv-Revert-a-change-from-https-github.com-python-cp.patch
-{% if 'conda-forge' not in channel_targets %}
-      - patches/0019-Add-CondaEcosystemModifyDllSearchPath.patch
-{% endif %}
+# {% if 'conda-forge' not in channel_targets %}
+#       - patches/0019-Add-CondaEcosystemModifyDllSearchPath.patch
+# {% endif %}
       - patches/0020-Use-ranlib-from-env-if-env-variable-is-set.patch
   # TODO :: Depend on our own packages for these:
   - url: https://github.com/python/cpython-source-deps/archive/xz-5.2.2.zip          # [win]
@@ -118,9 +118,9 @@ requirements:
     - make  # [not win]
     - pkg-config  # [not win]
     # configure script looks for llvm-ar for lto
-{% if 'conda-forge' in channel_targets %}
-    - llvm-tools  # [osx]
-{% endif %}
+# {% if 'conda-forge' in channel_targets %}
+#     - llvm-tools  # [osx]
+# {% endif %}
     - patch  # [not win]
     - m2-patch  # [win]
   host:
