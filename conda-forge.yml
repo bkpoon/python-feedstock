@@ -1,2 +1,9 @@
 provider: {linux_aarch64: default, linux_ppc64le: default}
-conda_forge_output_validation: true
+channels:
+  targets:
+    - [cctbx-dev, main]
+
+azure:
+  user_or_org: cctbx-release
+  project_name: feedstock-builds
+  store_build_artifacts: true
