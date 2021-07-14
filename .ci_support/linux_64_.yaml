@@ -9,7 +9,7 @@ cdt_name:
 channel_sources:
 - conda-forge,defaults
 channel_targets:
-- conda-forge main
+- cctbx-dev main
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -47,7 +47,7 @@ pin_run_as_build:
 python:
 - '3.7'
 readline:
-- '8.0'
+- '8'
 sqlite:
 - '3'
 target_platform:
