@@ -30,7 +30,7 @@ if [[ ${PY_INTERP_LINKAGE_NATURE} == shared ]]; then
 fi
 
 # For debugging builds, set this to no to disable profile-guided optimization
-if [[ ${DEBUG_C} == yes ]]; then
+if [[ ${DEBUG_C} == no ]]; then
   _OPTIMIZED=no
 else
   _OPTIMIZED=yes
@@ -81,6 +81,11 @@ fi
 CXX=$(basename "${CXX}")
 RANLIB=$(basename "${RANLIB}")
 READELF=$(basename "${READELF}")
+
+# set debug flags
+CPPFLAGS=${DEBUG_CPPFLAGS}
+CFLAGS=${DEBUG_CFLAGS}
+CXXFLAGS=${DEBUG_CXXFLAGS}
 
 if [[ ${HOST} =~ .*darwin.* ]] && [[ -n ${CONDA_BUILD_SYSROOT} ]]; then
   # Python's setup.py will figure out that this is a macOS sysroot.
