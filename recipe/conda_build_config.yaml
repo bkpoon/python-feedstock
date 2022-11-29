@@ -4,3 +4,5 @@ python_impl:
   - cpython
 numpy:
   - 1.16
+channel_targets:
+  - cctbx202211 main
